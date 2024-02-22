@@ -1,0 +1,54 @@
+---
+import Header from '../components/Header.astro';
+import '@fontsource-variable/plus-jakarta-sans'; 
+---
+<html lang="es" transition:animate="slide">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <Header />
+        <slot/>
+        
+    </body>
+</html>
+
+<style is:global>
+    html {
+        padding: 0;
+        margin: 0;
+        font-family: 'Plus Jakarta Sans Variable', sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    main{
+        margin: 0;
+         /* Para navegadores WebKit (Chrome, Safari, etc.) */
+    -webkit-font-smoothing: antialiased;
+    /* Para navegadores Mozilla (Firefox) */
+    -moz-osx-font-smoothing: grayscale;
+    /* Para navegadores que soportan la propiedad sin prefijos */
+    font-smooth: antialiased;
+    background: linear-gradient(
+    rgba(0, 0, 0, 1), /* Color oscuro con opacidad */
+    rgba(0, 0, 0, .75) /* Color oscuro con opacidad */
+    ), url('../assets/background.webp'); /* Imagen de fondo y degradado */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    position: relative;
+    z-index: 1;
+    overflow-x: hidden;
+    }
+
+    section
+    {
+        height: calc(100vh - 72px);
+        padding:  0 16px;
+        width: 100%;
+        overflow-x: hidden;
+    }
+</style>

@@ -1,16 +1,16 @@
 ---
-
+import Layout from '../layouts/Layout.astro'
+import SectionHome from '../sections/SectionHome.astro'
+import SectionServices from '../sections/SectionServicios.astro'
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+	<main class="md:snap-y md:snap-mandatory md:relative md:w-full md:h-screen md:overflow-auto ">
+		<div class="md:snap-start py-2">
+			<SectionHome />
+		</div>
+		<div class="md:snap-start">
+			<SectionServices />
+		</div>
+	</main>	
+	
+</Layout>
