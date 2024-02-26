@@ -1,34 +1,161 @@
 ---
-import HeaderMobile from './HeaderMobile.jsx';
-import HeaderLogo from '../assets/logoSmall.astro';
+import HeaderLogo from '../assets/LogoSmall.astro';
+import IconHome from '../icons/Home.astro';
+import IconPenFountain from '../icons/PenFountain.astro';
+import IconGroup from '../icons/Group.astro';
+import IconBook from '../icons/Book.astro';
+import IconMail from '../icons/Mail.astro';
+import IconMenu from '../icons/Menu.astro';
+import IconClose from '../icons/Close.astro';
 ---
 
-    <style>
-        .logo {
-            padding: 2px 0;
-        }
+<header transition:animate="none" class="block min-w-80	fixed top-0 left-0 z-40 w-full sm:bg-black-950  text-white py-1 px-4 h-20 sm:shadow-md">
+    <div class="container mx-auto flex items-center justify-between h-full">
+        <div class="w-full inline-flex justify-between">
+            <div class="logo hidden sm:block">
+                <!-- Logo -->
+                <HeaderLogo class="size-5" />
+            </div>
+            <!--Navegación -->
+            <nav class="hidden sm:flex space-x-4">
+                <!-- Enlaces de navegación para la versión de escritorio -->
+                <a href="#home" class="hover:text-governor-bay-300 flex gap-2 items-center p-2s">
+                    <IconHome class="size-4" />
+                    <span class="text-sm">Inicio</span>
+                </a>
+
+                <a href="#servicios" class="hover:text-governor-bay-300 flex gap-2 items-center p-2 ">
+                    <IconPenFountain class="size-4" />
+                    <span class="text-sm">Servicios</span>
+                </a>
+
+                <a href="#equipo" class="hover:text-governor-bay-300 flex gap-2 items-center p-2">
+                    <IconGroup class="size-4" />
+                    <span class="text-sm">Equipo</span>
+                </a>
+    
+                <a href="#sobreNosotros" class="hover:text-governor-bay-300 flex gap-2 items-center p-2">
+                    <IconBook class="size-4" />
+                    <span class="text-sm">Sobre nosotros</span>
+                </a>
+                
+                <a href="#contacto" class="hover:text-governor-bay-300 flex gap-2 items-center p-2">
+                    <IconMail class="size-4" />
+                    <span class="text-sm">Contacto</span>
+                </a>
+            </nav> 
+        </div>
+        
 
         
-    </style>
-
-    <header transition:animate="none" class="bg-transparent fixed top-0 left-0 z-40 w-full sm:bg-black-950  text-white py-1 px-4 h-20 shadow-md">
-        <div class="container mx-auto flex items-center justify-between h-full">
-            <div class="logo hidden sm:block">
-            <!-- Aquí puedes colocar tu logo -->
-                <HeaderLogo class="w-6 h-6" />
+            <div class="menu z-40 shadow-md size-12 min-w-12 min-h-12 relative rounded-md border flex sm:hidden items-center justify-center m-0" >
+                <input type="checkbox" class="size-full absolute opacity-0" id="toggle-menu">
+                <div class="icon-menu size-full items-center justify-center">
+                    <IconMenu class="icon-menu size-7/12 text-white" >
+                </div>
+                <div class="icon-close size-full items-center justify-center">
+                    <IconClose class="icon-menu size-7/12 text-white" >
+                </div>
             </div>
-            <nav class="hidden sm:flex space-x-4">
-            <!-- Enlaces de navegación para la versión de escritorio -->
-            <a href="#home" class="hover:text-gray-300">Home</a>
-            <a href="#servicios" class="hover:text-gray-300">Servicios</a>
-            <a href="#Profesionistas" class="hover:text-gray-300">Profesionistas</a>
-            <a href="#Historia" class="hover:text-gray-300">Historia</a>
-            <a href="#Contacto" class="hover:text-gray-300">Contacto</a>
-            </nav>    
-           
-    </header>
-    <HeaderMobile client:visible transition:animate="none"/>
 
-   
+            <section id="menu-mobile" class="hidden sm:hidden z-0 absolute bg-black-800 w-10/12 min-h-screen top-0 right-0 px-2">
+                <div class="h-12 mt-5 p-3">
+                    <h1 class="text-2xl">Notaria 1</h1>
+                </div>
+                <nav class="p-3">
+                    <ul>
+                        <li class="border-b border-black-900">
+                            
+                                <a href="#home" class="hover:text-governor-bay-300 flex gap-2 items-center py-4" >
+                                    
+                                        <IconHome class="size-4" />
+                                        <span class="text-sm">Inicio</span>
+                                    
+                                </a>
+                            
+                        </li>
+                        <li class="border-b border-black-900">
+                            <a href="#servicios" class="hover:text-governor-bay-300 flex gap-2 items-center py-4">
+                                
+                                    <IconPenFountain class="size-4" />
+                                    <span class="text-sm">Servicios</span>
+                                
+                            </a>
+                        </li>
+                        <li class="border-b border-black-900">
+                            <a href="#equipo" class="hover:text-governor-bay-300 flex gap-2 items-center py-4">
+                                
+                                    <IconGroup class="size-4" />
+                                    <span class="text-sm">Equipo</span>
+                                
+                            </a>
+                        </li>
+                        <li class="border-b border-black-900">
+                            <a href="#sobreNosotros" class="hover:text-governor-bay-300 flex gap-2 items-center py-4">
+                                
+                                    <IconBook class="size-4" />
+                                    <span class="text-sm">Sobre nosotros</span>
+                                
+                            </a>
+                        </li>
+                        <li class="border-b border-black-900">
+                            <a href="#contacto" class="hover:text-governor-bay-300 flex gap-2 items-center py-4">
+                                
+                                    <IconMail class="size-4" />
+                                    <span class="text-sm">Contacto</span>
+                                
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+
+        
+        
+        
+       
+        
+            
+        
+</header>
+
+
+<style>
+
+    header {
+        --800: #4f4f4f;
+        --900: #454545;
+    }
+    
+    .logo {
+            padding: 2px 0;
+        } 
+
+    .menu:has(>input:checked){
+        background-color: var(--800);
+    }
+
+    .menu:not(:has(>input:checked)) {
+        background-color: var(--900);
+    }
+
+    .menu:not(:has(>input:checked)) .icon-menu,
+    .menu:has(>input:checked) .icon-close{
+        display: flex;
+    }
+
+    .menu:has(>input:checked) .icon-menu,
+    .menu:not(:has(>input:checked)) .icon-close{
+        display: none;
+    }
+
+    .menu:has(>input:checked) ~ section {
+        display: block;
+    }
+
+
+
+
+</style>   
 
 
